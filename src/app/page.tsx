@@ -67,8 +67,11 @@ function Dashboard({ token, user, logout }: { token: string; user: User; logout:
   }, [documents, load]);
 
   async function upload(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault(); setBusy(true); setNotice("");
-    try { await api.upload(token, new FormData(event.currentTarget)); event.currentTarget.reset(); await load(); setNotice("Đã gửi tài liệu sang Textract. Worker sẽ xử lý nền."); }
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    setBusy(true); setNotice("");
+    try { await api.upload(token, formData); form.reset(); await load(); setNotice("Đã gửi tài liệu sang Textract. Worker sẽ xử lý nền."); }
     catch (e) { setNotice(e instanceof Error ? e.message : "Tải lên thất bại"); }
     finally { setBusy(false); }
   }

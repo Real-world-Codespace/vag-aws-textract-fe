@@ -22,6 +22,7 @@ button { cursor:pointer; }
 label { font-size:13px; font-weight:700; display:flex; flex-direction:column; gap:8px; }
 label span { color:var(--muted); font-weight:400; }
 input,textarea { width:100%; border:1px solid #ccd4ce; border-radius:10px; padding:13px 14px; background:white; outline:none; color:var(--ink); }
+input[type="checkbox"] { width:16px; height:16px; padding:0; flex:0 0 16px; accent-color:var(--green); }
 input:focus,textarea:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(23,79,59,.1); }
 .primary { border:0; background:var(--green); color:white; border-radius:10px; padding:13px 18px; font-weight:700; display:inline-flex; align-items:center; justify-content:center; gap:9px; }
 .primary:disabled { opacity:.55; cursor:not-allowed; }
@@ -52,7 +53,7 @@ header h1 { font:500 38px Georgia,serif; margin:5px 0 0; }
 .drop { border:1px dashed #aab9b0; border-radius:12px; min-height:145px; align-items:center; justify-content:center; color:var(--green); position:relative; text-align:center; }
 .drop svg { width:28px; }.drop small { color:var(--muted); font-weight:400; }.drop input { position:absolute; inset:0; opacity:0; cursor:pointer; }
 .document-list { display:flex; flex-direction:column; gap:8px; max-height:430px; overflow:auto; }
-.document-list article { border:1px solid var(--line); border-radius:11px; padding:12px; display:flex; align-items:center; gap:10px; }
+.document-list article { width:100%; min-width:0; border:1px solid var(--line); border-radius:11px; padding:12px; display:flex; align-items:center; gap:10px; }
 .document-list article.selected { border-color:#80a28e; background:#f2f8f4; }
 .file-icon { color:var(--green); width:21px; flex:none; }.doc-info { min-width:0; flex:1; }.doc-info strong,.doc-info small,.doc-info em { display:block; }
 .doc-info strong { font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }.doc-info small { color:var(--muted); font-size:10px; margin-top:5px; }.doc-info em { color:var(--red); font-size:10px; margin-top:5px; max-height:25px; overflow:hidden; }
